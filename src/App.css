@@ -1,42 +1,237 @@
+@keyframes wobble {
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes hop {
+  50% {
+    transform: translateY(-2dvh);
+  }
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: fit-content(375px) 1fr;
+  text-shadow: 0 0 .5dvh black;
+  overflow-y: hidden;
+}
+
+body {
+  background: conic-gradient(at 40dvw 100dvh, beige, cornflowerblue);
+  color: greenyellow;
+}
+
+h1 {
+  text-shadow: 5px 5px 1dvh black;
+  -webkit-text-stroke: .5px black;
+}
+
+h2 {
+  border-bottom: 1dvh ridge #00fffb;
+  outline: .4dvh solid black;
+  padding: 0 1dvw;
+  border-radius: 1dvh 1dvh 10dvh 10dvh;
+  background: skyblue;
+  padding: 1dvh 3dvw;
+  color: white;
+  text-shadow: 0 0 .5dvh black;
+}
+
+.sidebar-container {
   padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: #285f7f;
+  min-width: 0;
+  width: 30dvw;
+  filter: drop-shadow(0 0 1dvh black);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.list-container {
+  display: flex;
+  justify-content: flex-start;
+  overflow-y: overlay;
+  max-height: 700px;
+  scrollbar-color: #ffffff40 #00000000;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+a:hover {
+  color: rgb(128, 0, 255);
+  animation: wobble 1s 1;
 }
 
-.card {
-  padding: 2em;
+ul {
+  list-style-type: none;
+  max-width: 300px;
+  display: inline-block;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 1dvh;
 }
 
-.read-the-docs {
-  color: #888;
+li {
+  font-size: 2rem;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  cursor: pointer;
+  border: 10px solid yellow;
+  border-left: 1dvh groove white;
+  border-bottom: 1dvh ridge white;
+  padding-left: 2dvw;
+  width: 20dvh;
+  border-radius: 100dvh 50dvh;
+  outline: .4dvh solid black;
+}
+
+.details-container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: darkgray;
+  padding: .5dvh 2dvw;
+  border-radius: 10dvh 10dvh 0 0;
+  outline: 0.4dvh solid black;
+}
+
+input {
+  height: 2rem;
+  width: 10rem;
+  margin-bottom: 1rem;
+  border-radius: 100dvh 50dvh;
+  padding: 2dvh 3dvw;
+  font-weight: bold;
+  font-size: 2dvh;
+  border: 1dvh inset white;
+  outline: .4dvh solid black;
+}
+
+button {
+  width: 10rem;
+  margin: 1rem;
+  background: pink;
+  padding: 0 3dvw;
+  border-radius: 100dvh 100dvh 50dvh 50dvh;
+  font-size: 3dvh;
+  font-weight: bold;
+  text-shadow: 0 0 .5dvh black;
+  outline: .4dvh solid black;
+  aspect-ratio: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.4rem 0 10rem 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.button-container {
+  padding: 2rem;
+  outline: 0;
+  display: flex;
+  padding: 0;
+}
+
+.paw-pad {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin: -1dvh 0;
+  scale: .9;
+  outline: 2px solid white;
+  background: white;
+  border-radius: 100dvh 100dvh 0 0;
+}
+
+.paw-pad:hover {
+  filter: hue-rotate(180deg);
+  animation: hop .5s 1;
+}
+
+.toes {
+  display: flex;
+  translate: 4.4rem 1rem;
+}
+
+.toe {
+  background: pink;
+  width: 5.3rem;
+  aspect-ratio: .8;
+  border-radius: 50%;
+  scale: .6;
+  outline: .6dvh solid black;
+}
+
+.one {
+  grid-column: 1;
+  translate: -1.8rem 3rem;
+  rotate: -15deg;
+  scale: .55;
+}
+
+.two {
+  grid-column: 2;
+  translate: -3.7rem 1rem;
+  aspect-ratio: .7;
+  rotate: -2deg;
+}
+
+.three {
+  grid-column: 3;
+  translate: -5.1rem 1rem;
+  aspect-ratio: .7;
+  rotate: 2deg;
+}
+
+.four {
+  grid-column: 4;
+  translate: -7rem 3rem;
+  rotate: 15deg;
+  scale: .55;
+}
+
+.pet-list {
+  scale: .8;
+}
+
+.pet-details {
+  scale: .7;
+  margin: 0 -2rem;
+  translate: 0 5rem;
 }
