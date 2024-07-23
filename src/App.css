@@ -34,14 +34,19 @@ h1 {
 }
 
 h2 {
-  border-bottom: 1dvh ridge #00fffb;
-  outline: .4dvh solid black;
   padding: 0 1dvw;
-  border-radius: 1dvh 1dvh 10dvh 10dvh;
-  background: skyblue;
+  background: red;
   padding: 1dvh 3dvw;
+  margin-bottom: 0;
   color: white;
-  text-shadow: 0 0 .5dvh black;
+  text-shadow: 0 0 1rem black;
+  filter: drop-shadow(0 .18em .01rem black);
+  border-radius: .2rem .25rem 0 0;
+  height: 4rem;
+  align-self: center;
+  -webkit-text-stroke: .06rem black;
+  display: flex;
+  align-items: center;
 }
 
 .sidebar-container {
@@ -259,4 +264,31 @@ button:hover {
   height: 50%;
   display: flex;
   justify-content: center;
+}
+
+.foodbowl {
+  display: flex;
+  filter: drop-shadow(0 -.3em .01rem black);
+  align-self: center;
+}
+
+.triangle {
+  border: 5rem solid red;
+  border-top: 1rem solid transparent;
+  border-bottom-color: none;
+  border-left-color: transparent;
+  filter: drop-shadow(0 .25rem .01rem black);
+  margin: 0 -.1rem;
+}
+
+.right {
+  border-left: none;
+  border-right-color: transparent;
+  border-radius: 10rem 10rem 10rem 0;
+  filter: drop-shadow(.1rem .25rem .01rem black);
+}
+
+.left {
+  border-right: transparent;
+  border-radius: 10rem 10rem 0 10rem;
 }

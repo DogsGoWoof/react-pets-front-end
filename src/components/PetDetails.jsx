@@ -10,11 +10,18 @@ const PetDetails = (props) => {
     return (
         <div className="details-container">
             <h1>{props.selected.name}</h1>
-            <h2>Breed: {props.selected.breed}</h2>
-            <h2>
-                Age: {props.selected.age} year{props.selected.age > 1 ? 's' : ''} old
-            </h2>
-
+            <div className="foodbowl">
+                <div className="triangle left"></div>
+                <h2>Breed: {props.selected.breed}</h2>
+                <div className="triangle right"></div>
+            </div>
+            <div className="foodbowl">
+                <div className="triangle left"></div>
+                <h2>
+                    Age: {props.selected.age} year{props.selected.age > 1 ? 's' : ''} old
+                </h2>
+                <div className="triangle right"></div>
+            </div>
             <div className="button-container">
 
                 <div className='paw-pad pet-details'>
