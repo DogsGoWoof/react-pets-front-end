@@ -45,7 +45,7 @@ const deletePet = async (petId) => {
             method: 'DELETE',
         });
         return deletedPet.json();
-            // .json() required to parse data to expected pet object allowing ._id read, otherwise CORS information object is returned
+            // .json() required to parse data to expected pet object allowing ._id read, otherwise CORS related information object is returned
     } catch (err) {
         console.log(err);
     }

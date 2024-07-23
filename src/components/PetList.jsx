@@ -4,6 +4,8 @@ const PetList = (props) => {
         <a key={pet._id} onClick={() => props.updateSelected(pet)}>
             <li>{pet.name}</li>
         </a>
+            // creates array based on list of pets with <a></a> elements used to setState of 「selected」
+                // used to update the state for use in PetDetails Component
     ));
 
     return (

@@ -59,12 +59,15 @@ h2 {
   display: flex;
   justify-content: flex-start;
   overflow-y: overlay;
-  max-height: 700px;
+  max-height: 50dvh;
   scrollbar-color: #ffffff40 #00000000;
+  outline: 1dvh groove white;
+  border-radius: 5dvh;
 }
 
 a {
   font-weight: bold;
+  display: flex;
 }
 
 a:hover {

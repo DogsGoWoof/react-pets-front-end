@@ -41,6 +41,7 @@ const App = () => {
 
   const updateSelected = (pet) => {
     setSelected(pet);
+    setIsFormOpen(false); // closes form if open to show details of selected pet
   }
 
   const handleFormView = (pet) => {
@@ -92,9 +93,14 @@ const App = () => {
       }
 
       const updatedPetList = petList.filter((pet) => pet._id !== deletedPet._id);
+        // create new array with all pets in petList with an「_id」that DO NOT match「deletedPet._id」 
       setPetList([...updatedPetList]);
+        // updates state of petList to new filtered array
+          // use of [...spread operator] to create new reference in memory to state to trigger React re-render
       setSelected(null);
+        // clears「selected」value to re-render PetDetails Component to no longer show deleted information
       setIsFormOpen(false);
+
     } catch (err) {
       console.log(err);
     }
