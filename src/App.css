@@ -2,6 +2,7 @@
   25% {
     transform: rotate(5deg);
   }
+
   75% {
     transform: rotate(-5deg);
   }
@@ -59,10 +60,12 @@ h2 {
   display: flex;
   justify-content: flex-start;
   overflow-y: overlay;
-  max-height: 50dvh;
+  max-height: 45dvh;
   scrollbar-color: #ffffff40 #00000000;
   outline: 1dvh groove white;
   border-radius: 5dvh;
+  width: fit-content;
+  max-width: 100%;
 }
 
 a {
@@ -71,18 +74,21 @@ a {
 }
 
 a:hover {
-  color: rgb(128, 0, 255);
+  color: #8000ff;
   animation: wobble 1s 1;
 }
 
 ul {
   list-style-type: none;
-  max-width: 300px;
-  display: inline-block;
   display: flex;
   flex-flow: column;
   align-items: center;
-  padding: 1dvh;
+  padding: .8dvh .5dvw;
+  overflow: scroll;
+  outline: 10rem solid white;
+  border: .4rem solid gray;
+  border-left: none;
+  border-right: none;
 }
 
 li {
@@ -90,15 +96,21 @@ li {
   white-space: wrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  overflow-y: scroll;
   margin-bottom: 1.2rem;
   cursor: pointer;
-  border: 10px solid yellow;
+  border-top: 10px groove yellow;
+  border-right: 10px ridge yellow;
   border-left: 1dvh groove white;
   border-bottom: 1dvh ridge white;
-  padding-left: 2dvw;
-  width: 20dvh;
+  padding: 0 1.5dvw;
+  min-width: min-content;
+  min-width: 6rem;
+  max-height: 3rem;
   border-radius: 100dvh 50dvh;
   outline: .4dvh solid black;
+  text-align: center;
+  background: linear-gradient(darkgray, gray);
 }
 
 .details-container {
@@ -107,6 +119,7 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .form-container {
@@ -151,7 +164,8 @@ button {
   font-size: 3dvh;
   font-weight: bold;
   text-shadow: 0 0 .5dvh black;
-  outline: .4dvh solid black;
+  outline: .3rem solid black;
+  border: none;
   aspect-ratio: 1.5;
   display: flex;
   align-items: center;
@@ -177,7 +191,7 @@ button:hover {
   align-items: center;
   margin: -1dvh 0;
   scale: .9;
-  outline: 2px solid white;
+  outline: .2rem solid black;
   background: white;
   border-radius: 100dvh 100dvh 0 0;
 }
@@ -198,7 +212,7 @@ button:hover {
   aspect-ratio: .8;
   border-radius: 50%;
   scale: .6;
-  outline: .6dvh solid black;
+  outline: .4rem solid black;
 }
 
 .one {
@@ -237,4 +251,12 @@ button:hover {
   scale: .7;
   margin: 0 -2rem;
   translate: 0 5rem;
+}
+
+#no-details {
+  text-align: center;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
 }

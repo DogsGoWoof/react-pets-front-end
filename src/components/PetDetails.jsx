@@ -3,7 +3,7 @@ const PetDetails = (props) => {
     if (!props.selected)
         return (
             <div className="details-container">
-                <h1>NO DETAILS</h1>
+                <h1 id="no-details">NO DETAILS</h1>
             </div>
         );
 
